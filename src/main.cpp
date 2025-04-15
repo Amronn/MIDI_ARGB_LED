@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <FastLED.h>
+#include <Control_Surface.h>
 
+USBMIDI_Interface midi;
 
 #define NUM_LEDS 176
 CRGB leds[NUM_LEDS];
@@ -9,7 +11,7 @@ CRGB leds[NUM_LEDS];
 #define BRIGHTNESS 255
 
 void setup() {
-    FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);  // GRB ordering is assumed
+    FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
 }
 
 void loop() {
